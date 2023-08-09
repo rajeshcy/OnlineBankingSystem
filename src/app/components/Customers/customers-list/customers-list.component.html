@@ -1,0 +1,44 @@
+<div class="container my-3" *ngIf="customers.length > 0">
+    <h3 class="">Customers Details</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FullName</th>
+                <th>FatherName</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>AccNo</th>
+                <th>PhoneNo</th>
+                <th>Balance</th>
+                <th>DOB</th>
+                <!-- <th>Password</th> -->
+                <th>Status</th>
+                <th>AccounType</th>
+                <th>PAN</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers ">
+                <td> {{customer.id}}</td>
+                <td>{{customer.fullName}}</td>
+                <td>{{customer.fatherName}}</td>
+                <td>{{customer.gender}}</td>
+                <td>{{customer.address}}</td>
+                <td>{{customer.accNo}}</td>
+                <td>{{customer.phoneNo}}</td>
+                <td>{{customer.balance | currency}}</td>
+                <td>{{customer.dob | date}}</td>
+                <!-- <td>{{customer.password}}</td> -->
+                <td>{{customer.status}}</td>
+                <td>{{customer.accounType}}</td>
+                <td>{{customer.pan}}</td>
+                <td><button class="btn btn-primary"   [routerLink]="['/customers','edit',customer.id]">View</button></td>
+            </tr>
+        </tbody>
+    </table> 
+</div>
+<div>
+    <p *ngIf="!customers || customers.length == 0">No Customers Found or You are not Authorised</p>
+</div>

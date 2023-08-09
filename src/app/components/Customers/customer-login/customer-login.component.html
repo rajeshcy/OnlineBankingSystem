@@ -1,0 +1,27 @@
+<div class="container my-5 mx-auto col-10 col-md-5 col-lg-3">
+    <h2 class="mb-3">Login</h2>
+    <div class="row">
+        <div >
+            <form [formGroup]="loginform" (ngSubmit)="loginSubmit()">
+                <div class="mb-3">
+                    <label for="accno" class="form-label">Account Number</label>
+                    <input type="text" class="form-control" id="accno" formControlName="accno">
+                    <div class="form-text text-danger" *ngIf="AccNo.errors?.['required'] && (AccNo.dirty || AccNo.touched)">
+                        Account Number is required
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="pwd" formControlName="pwd">
+                    <div class="form-text text-danger" *ngIf="password.errors?.['required'] && (password.dirty || password.touched)">
+                        Password is required
+                    </div>
+                    <div class="form-text text-danger" *ngIf="(password.errors?.['minlength'] || password.errors?.['maxlength']) && (password.dirty || password.touched)">
+                        Length of password should be between 6 and 15
+                    </div>
+                </div>
+                <button type="submit" [disabled]="loginform.invalid" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

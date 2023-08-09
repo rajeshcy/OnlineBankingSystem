@@ -1,0 +1,70 @@
+<div class="container my-3">
+    <div>
+        <h3 class="mb-3" style="font-style: oblique;" > Welcome {{ currentCustomer.FullName }}</h3>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FullName</th>
+                <th>FatherName</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>AccNo</th>
+                <th>PhoneNo</th>
+                <th>Balance</th>
+                <!-- <th>DOB</th> -->
+                <!-- <th>Password</th> -->
+                <!-- <th>Status</th> -->
+                <!-- <th>AccounType</th> -->
+                <th>PAN</th>
+          
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td> {{currentCustomer.Id}}</td>
+                <td>{{currentCustomer.FullName}}</td>
+                <td>{{currentCustomer.FatherName}}</td>
+                <td>{{currentCustomer.Gender}}</td>
+                <td>{{currentCustomer.Address}}</td>
+                <td>{{currentCustomer.AccNo}}</td>
+                <td>{{currentCustomer.PhoneNo}}</td>
+                <td>{{currentCustomer.Balance | currency}}</td>
+                <!-- <td>{{currentCustomer.Dob }}</td> -->
+                <!-- <td>{{customer.password}}</td> -->
+                <!-- <td>{{currentCustomer.Status}}</td> -->
+                <!-- <td>{{currentCustomer.accounType}}</td> -->
+                <td>{{currentCustomer.Pan}}</td>
+                
+            </tr>
+        </tbody>
+    </table>   
+    <div class="col-3">
+        <div>
+            <div>
+                <form #form="ngForm" (ngSubmit)="AddAmount()">
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">Amount to Add</label>
+                        <input type="number" class="form-control" id="amount" 
+                         name="amount" [(ngModel)]="addTransactionRequest.amount"  >   
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>            
+            <div>
+                <form #form="ngForm" (ngSubmit)="WithdrawAmount()">
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">Amount to Withdraw</label>
+                        <input type="number" class="form-control" id="amount" 
+                        name="amount" [(ngModel)]="WithdrawTransactionRequest.amount"  >   
+                    </div>
+                    <button type="submit" class="btn btn-primary">Withdraw</button>
+                </form>
+            </div>
+            <br>
+            <button class="btn btn-primary" [routerLink]="['/ministatement']">Transactions</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+
+<div class="container my-3">
+    <h3 class="">Transactions</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Transaction Id</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let trans of transList ">
+                <td> {{trans.transactionId}}</td>
+                <td>{{trans.status}}</td>
+                <td>{{trans.date}}</td>
+               <td>{{ trans.amount}}</td>
+            </tr>
+        </tbody>
+    </table> 
+</div>
+

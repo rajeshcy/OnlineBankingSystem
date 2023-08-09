@@ -1,0 +1,35 @@
+<div class="container my-5 mx-auto col-10 col-md-5 col-lg-3">
+    <h2 class="mb-3">Login as Admin</h2>
+    <div class="row">
+        <div >
+            <form [formGroup]="Adminloginform" (ngSubmit)="LoginAdmin()">
+                <div class="mb-3">
+                    <label for="userid" class="form-label">UserId</label>
+                    <input type="text" class="form-control" id="userid" formControlName="userid"
+                    >
+                    <div class="form-text text-danger" *ngIf="UserId.errors?.['required'] && (UserId.dirty || UserId.touched)">
+                        UserId is required
+                    </div>
+                    <!-- <div class="form-text text-danger">
+                        Account Number is required
+                    </div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="pwd" formControlName="pwd">
+
+                    <div class="form-text text-danger" *ngIf="password.errors?.['required'] && (password.dirty || password.touched)">
+                        Password is required
+                    </div>
+                    <!-- <div class="form-text text-danger" >
+                        Password is required
+                    </div>
+                    <div class="form-text text-danger">
+                        Length of password should be between 6 and 15
+                    </div> -->
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
