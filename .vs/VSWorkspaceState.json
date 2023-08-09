@@ -1,14 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\.angular",
-    "\\src",
-    "\\src\\app",
-    "\\src\\app\\components",
-    "\\src\\app\\components\\Customers",
-    "\\src\\app\\components\\Customers\\add-customer",
-    "\\src\\app\\models"
+    ""
   ],
-  "SelectedNode": "\\src\\app\\models\\customer.model.ts",
+  "SelectedNode": "\\D:\\Rajesh practice projects\\Angular\\OnlineBankingSystem\\OnlineBankingSystem.UI",
   "PreviewInSolutionExplorer": false
 }
